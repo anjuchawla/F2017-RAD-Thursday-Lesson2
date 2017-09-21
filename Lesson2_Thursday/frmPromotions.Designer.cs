@@ -113,7 +113,7 @@
             this.mtxMemberId.Location = new System.Drawing.Point(165, 92);
             this.mtxMemberId.Mask = "00000";
             this.mtxMemberId.Name = "mtxMemberId";
-            this.mtxMemberId.Size = new System.Drawing.Size(43, 27);
+            this.mtxMemberId.Size = new System.Drawing.Size(58, 27);
             this.mtxMemberId.TabIndex = 3;
             this.toolTip1.SetToolTip(this.mtxMemberId, "Please enter your member ID");
             this.mtxMemberId.ValidatingType = typeof(int);
@@ -125,6 +125,7 @@
             this.rtbWelcome.ReadOnly = true;
             this.rtbWelcome.Size = new System.Drawing.Size(344, 65);
             this.rtbWelcome.TabIndex = 9;
+            this.rtbWelcome.TabStop = false;
             this.rtbWelcome.Text = "";
             // 
             // txtPromotion
@@ -134,6 +135,7 @@
             this.txtPromotion.ReadOnly = true;
             this.txtPromotion.Size = new System.Drawing.Size(344, 22);
             this.txtPromotion.TabIndex = 10;
+            this.txtPromotion.TabStop = false;
             // 
             // btnSignIn
             // 
@@ -143,6 +145,7 @@
             this.btnSignIn.TabIndex = 1;
             this.btnSignIn.Text = "&Sign In";
             this.btnSignIn.UseVisualStyleBackColor = true;
+            this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
             // 
             // btnPrint
             // 
@@ -152,6 +155,7 @@
             this.btnPrint.TabIndex = 5;
             this.btnPrint.Text = "&Print";
             this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // btnClear
             // 
@@ -161,9 +165,11 @@
             this.btnClear.TabIndex = 4;
             this.btnClear.Text = "C&lear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnExit
             // 
+            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnExit.Location = new System.Drawing.Point(879, 654);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 34);
@@ -196,6 +202,7 @@
             this.rdoClothing.TabStop = true;
             this.rdoClothing.Text = "&Clothing";
             this.rdoClothing.UseVisualStyleBackColor = true;
+            this.rdoClothing.CheckedChanged += new System.EventHandler(this.rdoClothing_CheckedChanged);
             // 
             // rdoEquipmentAccessories
             // 
@@ -260,6 +267,7 @@
             this.chkImageVisible.TabIndex = 3;
             this.chkImageVisible.Text = "Image &Visible";
             this.chkImageVisible.UseVisualStyleBackColor = true;
+            this.chkImageVisible.CheckedChanged += new System.EventHandler(this.chkImageVisible_CheckedChanged);
             // 
             // grpInput
             // 
@@ -304,8 +312,10 @@
             // 
             // frmPromotions
             // 
+            this.AcceptButton = this.btnSignIn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(994, 767);
             this.Controls.Add(this.grpInput);
             this.Controls.Add(this.chkImageVisible);
@@ -321,7 +331,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.shapeContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MinimizeBox = false;
+            this.MaximizeBox = false;
             this.Name = "frmPromotions";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Promotions";
