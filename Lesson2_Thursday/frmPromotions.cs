@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Lesson2_Thursday
 {
-    public partial class Form1 : Form
+    public partial class frmPromotions : Form
     {
-        public Form1()
+        public frmPromotions()
         {
             InitializeComponent();
+        }
+
+        private void frmPromotions_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
